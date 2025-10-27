@@ -1,0 +1,15 @@
++++
+date = '2025-10-21T15:48:26+01:00'
+draft = false
+title = 'Introduction'
++++
+Over the past few years, a succession of major supply chain incidents such as SolarWinds and Log4J have made it painfully apparent that many organisations have insufficient understanding of the dependencies within their software supply chain. The Software Bill of Materials (SBOM) is an important building block in tackling this problem. Using SBOMs, organisations can maintain a formalised and permanently up to date overview of all the software used and their dependencies. An insight into the software supply chain can serve different applications within an organisation. Among others, the previous study by Capgemini and by the NTIA. provide a detailed overview. The two main reasons for organisations to work on their SBOMs right now are:
+
+- **Vulnerability Management:** creating the automated link between public vulnerabilities and vulnerable products, and
+- **Compliance Management:** demonstrably complying with statutory and other requirements that offer an insight into software dependencies. 
+
+In this guide, the focus is on the use of SBOM for vulnerability management, because that is the area in which SBOM delivers the greatest added value. However, from this perspective it is also important to focus attention on developments in the field of legislation and regulations so that these can be included in reaching agreements and selecting tooling. The detail block on this page briefly discusses the most important developments. 
+
+Despite the fact that SBOM is widely talked about, the term still raises many questions. It is often unclear to organisations precisely what SBOM can mean, what is required to successfully integrate SBOM and how SBOM relates to other elements such as the Vulnerability Exploitability eXchange (VEX) and the Common Security Advisory Framework (CSAF) This starter guide was developed to assist managers who are involved in the cybersecurity of their organisation to understand these issues. In this guide, NCSC and TNO provide answers to frequently asked questions and offer clear recommendations for starting with SBOM. 
+
+The information in this guide is based on desk research, a workshop with representatives of the target group for this guide and interviews with organisations that have already gained experience with the use of SBOM: Philips, ABB and Siemens. A discussion was also held with Allan Friedman, representative of the American Cybersecurity and Infrastructure Security Agency (CISA). In the research, sources made available by the American National Telecommunications Information Administration (NTIA) were regularly consulted. Finally, this guide builds on the results of a previous study by the NCSC and Capgemini: Using the Software Bill of Materials for Enhancing Cybersecurity.
