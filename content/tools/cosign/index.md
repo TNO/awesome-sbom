@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T14:12:06+01:00'
-draft = true
+draft = false
 title = 'Cosign'
 manufacturer = "Sigstore"
 link = "https://github.com/sigstore/cosign"

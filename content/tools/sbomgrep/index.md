@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T14:02:20+01:00'
-draft = true
+draft = false
 title = 'SBOM Grep'
 manufacturer = "Interlynk"
 link = "https://github.com/interlynk-io/sbomgr"

@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T13:48:48+01:00'
-draft = true
+draft = false
 title = 'CycloneDX Generator (cdxgen)'
 manufacturer = "OWASP"
 link = "https://github.com/CycloneDX/cdxgen"

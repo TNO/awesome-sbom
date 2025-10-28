@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T14:12:08+01:00'
-draft = true
+draft = false
 title = 'Witness'
 manufacturer = "In-Toto"
 link = "https://github.com/in-toto/witness"

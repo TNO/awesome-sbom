@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T13:48:55+01:00'
-draft = true
+draft = false
 title = 'GUAC'
 manufacturer = "Google, OpenSSF, OWSAP"
 link = "https://github.com/guacsec/guac"

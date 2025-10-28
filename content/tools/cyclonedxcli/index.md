@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T12:03:40+01:00'
-draft = true
+draft = false
 title = 'CycloneDX CLI'
 manufacturer = "OWASP"
 link = "https://github.com/CycloneDX/cyclonedx-cli"

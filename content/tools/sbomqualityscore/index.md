@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T14:02:17+01:00'
-draft = true
+draft = false
 title = 'SBOM Quality Score '
 manufacturer = "Interlynk"
 link = "https://github.com/interlynk-io/sbomqs"

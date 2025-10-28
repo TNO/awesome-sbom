@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T14:02:13+01:00'
-draft = true
+draft = false
 title = 'SBOM Assembler'
 manufacturer = "Interlynk "
 link = "https://github.com/interlynk-io/sbomasm"

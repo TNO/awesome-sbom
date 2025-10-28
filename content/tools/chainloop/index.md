@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T14:12:39+01:00'
-draft = true
+draft = false
 title = 'Chainloop'
 manufacturer = "Chainloop"
 link = "https://github.com/chainloop-dev/chainloop"

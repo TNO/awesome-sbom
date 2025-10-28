@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T13:48:45+01:00'
-draft = true
+draft = false
 title = 'Transparency Exchange API'
 manufacturer = "CycloneDX – Ecma TC 54 "
 link = "https://github.com/CycloneDX/transparency-exchange-api/tree/main"

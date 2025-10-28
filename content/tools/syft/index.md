@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T14:09:00+01:00'
-draft = true
+draft = false
 title = 'Syft'
 manufacturer = "Anchore"
 link = "https://github.com/anchore/syft"

@@ -1,6 +1,6 @@
 +++
 date = '2025-10-28T13:48:51+01:00'
-draft = true
+draft = false
 title = 'SPDX Tools (java/python)'
 manufacturer = "SPDX"
 link = "https://github.com/spdx/tools-python"
