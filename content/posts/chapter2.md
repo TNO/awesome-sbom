@@ -7,7 +7,7 @@ title = '2. SBOM in the organisation'
 Now the content of an SBOM is clear, the next question is: how can I use it in my organisation? To eventually be able to use SBOMs for vulnerability management, a number of processes mut be settled.
 
 {{<figure 
-src="/images/Figure2.png" 
+src="images/Figure2.png" 
 alt="drawing"
 caption="*Figure 2*"
 class=figure

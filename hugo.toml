@@ -15,7 +15,7 @@ title = 'Awsome-SBOM'
 
 [params.author]
     name = "TNO & NSCS"
-    image = "/images/sbom_graphic.png"
+    image = "images/sbom_graphic.png"
 
 
 [caches]
