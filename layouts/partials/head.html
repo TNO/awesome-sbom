@@ -30,16 +30,6 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta
-  name="twitter:title"
-  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
-/>
-<meta
-  name="twitter:description"
-  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
-/>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />

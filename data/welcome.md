@@ -2,6 +2,6 @@ As software supply chains grow increasingly complex, the need for transparency, 
 
 SBOMs offer a machine-readable inventory of software components, typically formatted in standards like CycloneDX or SPDX. They play a critical role in managing exposure to vulnerabilities and ensuring compliance with emerging digital regulations. However, the effectiveness of SBOMs depends heavily on the tools used to produce, share, manage, and apply them.
 
-This overview maps the current landscape of SBOM tooling across the SBOM life cycle—Produce, Share, Manage, and Apply—and evaluates each tool based on its functional capabilities and security contributions. The goal is to support informed adoption and highlight areas where further development is needed.
+This overview maps the current landscape of SBOM tooling across the SBOM life cycle Produce, Share, Manage, and Apply and evaluates each tool based on its functional capabilities and security contributions. The goal is to support informed adoption and highlight areas where further development is needed.
 
 Whether you're looking to generate SBOMs, verify their integrity, enrich them with vulnerability data, or integrate them into your security operations, this page offers a practical starting point for selecting the right tools.
