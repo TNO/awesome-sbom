@@ -16,3 +16,8 @@ title = 'Awsome-SBOM'
 [params.author]
     name = "TNO & NSCS"
     image = "/images/sbom_graphic.png"
+
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
