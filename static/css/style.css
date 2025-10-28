@@ -3223,3 +3223,195 @@ figure figcaption {
   }
 }
 
+/* Tools table (above posts) */
+.tools-section {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.tools-heading {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--btn-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tools-table-wrapper {
+  overflow-x: auto;            /* horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.tools-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;         /* predictable column widths */
+  background: var(--bg-card);
+}
+
+.tools-table th,
+.tools-table td {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: top;
+  color: var(--text-secondary);
+  word-wrap: break-word;
+}
+
+.tools-table th {
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  position: sticky;            /* keeps header visible while scrolling */
+  top: 0;
+  z-index: 1;
+}
+
+.tools-table tr:hover td {
+  background: rgba(0, 206, 209, 0.08); /* subtle cyan wash to match accents */
+  transition: background 0.2s ease;
+}
+
+.tools-table td:first-child a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tools-table td:first-child a:hover {
+  background: var(--btn-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 10px var(--glow-color);
+}
+
+/* Clamp long summaries to two lines */
+.tools-table td:nth-child(2) {
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Optional: style tags as soft pills if you wrap each tag in a span.tool-tag */
+.tool-tag {
+  display: inline-block;
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 14px;
+  background: var(--tag-gradient);
+  color: var(--tag-text);
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .tools-section { padding: 0.9rem 1rem; border-radius: 14px; }
+  .tools-table th, .tools-table td { padding: 0.55rem 0.7rem; font-size: 0.95rem; }
+  /* Hide the Tags column on small screens to save space */
+  .tools-table th:nth-child(3),
+  .tools-table td:nth-child(3) { display: none; }
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border-radius: 12px;
+}
+
+/* Base table styling */
+.post-body table,
+.post-overlay .post-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+/* Header */
+.post-body table thead th,
+.post-overlay .post-body table thead th {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+/* Body cells */
+.post-body table td,
+.post-overlay .post-body table td {
+  padding: 0.55rem 0.9rem;
+  color: var(--text-secondary);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+/* Avoid double edges on the right side */
+.post-body table tr > *:last-child,
+.post-overlay .post-body table tr > *:last-child {
+  border-right: none;
+}
+
+/* Zebra striping */
+.post-body table tbody tr:nth-child(even),
+.post-overlay .post-body table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Hover */
+.post-body table tbody tr:hover,
+.post-overlay .post-body table tbody tr:hover {
+  background: rgba(0, 206, 209, 0.08);
+  transition: background 0.15s ease;
+}
+
+/* Optional sticky header */
+.post-body table thead th,
+.post-overlay .post-body table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Caption */
+.post-body table caption,
+.post-overlay .post-body table caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0.5rem 0.25rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Inline code inside table cells */
+.post-body table code,
+.post-overlay .post-body table code {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  padding: 0.1rem 0.3rem;
+  border-radius: 6px;
+  color: var(--code-text);
+  font-family: 'JetBrains Mono', monospace;
+}

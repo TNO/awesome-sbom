@@ -19,8 +19,11 @@
       {{ end }}
     {{ end }}
 
-
   </div>
+
+   {{ if .IsHome }}
+  {{ partial "tools-table.html" . }}
+  {{ end }}
 
   <div class="filter-section">
     <div class="filter-tags">

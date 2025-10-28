@@ -10,7 +10,7 @@ title = 'Awsome-SBOM'
 [params]
   description = "Awsome-SBOM"
   logo = "https://www.tno.nl/publish/pages/5604/tno-logo-1484x835_003_.jpg"
-  tagline = "## HELLO THERE"
+  tagline = "## SBOM Tooling Overview"
   welcome_file = "data/welcome.md"
 
 [params.author]

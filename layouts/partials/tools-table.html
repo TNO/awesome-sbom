@@ -1,0 +1,43 @@
+{{/* layouts/partials/tools-table.html */}}
+{{/* Collect tools section pages */}}
+{{ $tools := where .Site.RegularPages "Section" "tools" }}
+
+{{ if gt (len $tools) 0 }}
+<div class="tools-section">
+  <h2 class="tools-heading">Tools</h2>
+  <div class="tools-table-wrapper">
+    <table class="tools-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Manufacturer</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range sort $tools "Weight" "Title" }}
+          <tr>
+            <td>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </td>
+            <td>
+              {{ with .Params.manufacturer }}
+                {{ . }}
+              {{ else }}
+                {{ .Summary | plainify }}
+              {{ end }}
+            </td>
+            <td>
+              {{ with .Params.link }}
+                <a href={{.}}>link</a>
+              {{ else }}
+                "nvt"
+              {{ end }}
+            </td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+</div>
+{{ end }}
