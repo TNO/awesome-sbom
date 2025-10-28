@@ -7,7 +7,7 @@ title = '3. Producing, Managing & Sharing SBOMs'
 This chapter describes what an organisation needs to do in order to successfully set up the process of obtaining, managing and sharing (making available) SBOMs. Before you start with the task of producing SBOMs, a number of steps must first be completed. The various steps are briefly listed below and are further elaborated in a separate section.
 
 {{<figure 
-src="images/Figure3.png" 
+src="Figure3.png" 
 alt="drawing"
 caption="*Figure 3*"
 class=figure

@@ -7,7 +7,7 @@ title = '1. What is an SBOM'
 An SBOM describes the components that make up a piece of software and the relationships between those components. It is a nested list of software components comparable to the list of ingredients on food products. One vital aspect of this list is that the structure is **formalised (i.e., machine-readable)**, thereby opening the way for automation. *Figure 1* is an example of a simple SBOM.
 
 {{<figure 
-src="images/Figure1.png" 
+src="Figure1.png" 
 alt="drawing"
 caption="*Figure 1*"
 class=figure
