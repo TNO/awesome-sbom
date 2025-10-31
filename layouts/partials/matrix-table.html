@@ -14,18 +14,23 @@
     <div class="tools-table-wrapper">
       <table class="tools-table tools-matrix-table">
         <thead>
+          <tr class="tools-table-phases">
+            <th colspan="1"></th>
+            <th colspan="1">Production</th>
+            <th colspan="2">Sharing</th>
+            <th colspan="4">Management</th>
+            <th colspan="1">Exploitation</th>
+          </tr>
           <tr>
             <th>Tool</th>
             <th>Creation</th>
-            <th>Signing</th>
-            <th>Ingestion</th>
             <th>Sharing</th>
-            <th>Signature verification</th>
+            <th>Ingestion</th>
             <th>Quality assessment &amp; validation</th>
             <th>Conversion</th>
             <th>Management</th>
             <th>Enrichment</th>
-            <th>Vulnerability Measurement</th>
+            <th>Vulnerability assessment</th>
           </tr>
         </thead>
         <tbody>
@@ -40,15 +45,13 @@
                 tabindex="0">
               <td>{{ $title }}</td>
               <td>{{ $tool.functional_goals.Creation }}</td>
-              <td>{{ $tool.functional_goals.Signing }}</td>
-              <td>{{ $tool.functional_goals.Ingestion }}</td>
               <td>{{ $tool.functional_goals.Sharing }}</td>
-              <td>{{ $tool.functional_goals.Signature_verification }}</td>
+              <td>{{ $tool.functional_goals.Ingestion }}</td>
               <td>{{ $tool.functional_goals.Quality_assessment_validation }}</td>
               <td>{{ $tool.functional_goals.Conversion }}</td>
               <td>{{ $tool.functional_goals.Management }}</td>
               <td>{{ $tool.functional_goals.Enrichment }}</td>
-              <td>{{ $tool.functional_goals.Vulnerability_Measurement }}</td>
+              <td>{{ $tool.functional_goals.Vulnerability_assessment }}</td>
             </tr>
           {{ end }}
         </tbody>

@@ -23,14 +23,9 @@
   {{ $link = $page.Params.link }}
 {{ end }}
 
-{{ $manufacturer := $tool.manufacturer }}
-{{ if and (not $manufacturer) $page }}
-  {{ $manufacturer = $page.Params.manufacturer }}
-{{ end }}
-
-{{ $maker := $tool.tool_maker }}
-{{ if or (not $maker) (eq $maker "") }}
-  {{ $maker = $manufacturer }}
+{{ $developer := $tool.developer }}
+{{ if and (not $developer) $page }}
+  {{ $developer = $page.Params.developer }}
 {{ end }}
 
 {{ $release := $tool.release_date }}
@@ -44,7 +39,7 @@
 {{ end }}
 
 {{ $securityKeys := slice "Authenticity" "Integrity" "Non-repudiation" "Confidentiality" "Authorization" "Availability" }}
-{{ $functionalKeys := slice "Creation" "Signing" "Ingestion" "Sharing" "Signature_verification" "Quality_assessment_validation" "Conversion" "Management" "Enrichment" "Vulnerability_Measurement" }}
+{{ $functionalKeys := slice "Creation" "Sharing" "Ingestion" "Quality_assessment_validation" "Conversion" "Management" "Enrichment" "Vulnerability_assessment" }}
 
 {{ $securityGoals := $tool.security_goals }}
 {{ $functionalGoals := $tool.functional_goals }}
@@ -72,16 +67,10 @@
           <a class="tool-detail-info-link" href="{{ $link }}" target="_blank" rel="noopener">{{ $link }}</a>
         </div>
       {{ end }}
-      {{ if $manufacturer }}
+      {{ if $developer }}
         <div class="tool-detail-info-item">
-          <span class="tool-detail-info-label">Manufacturer</span>
-          <span class="tool-detail-info-value">{{ $manufacturer }}</span>
-        </div>
-      {{ end }}
-      {{ if and $maker (ne $maker $manufacturer) }}
-        <div class="tool-detail-info-item">
-          <span class="tool-detail-info-label">Tool maker</span>
-          <span class="tool-detail-info-value">{{ $maker }}</span>
+          <span class="tool-detail-info-label">Developer</span>
+          <span class="tool-detail-info-value">{{ $developer }}</span>
         </div>
       {{ end }}
       {{ if $release }}
@@ -115,7 +104,7 @@
                 {{ $label = "Quality assessment & validation" }}
               {{ else if eq . "Signature_verification" }}
                 {{ $label = "Signature verification" }}
-              {{ else if eq . "Vulnerability_Measurement" }}
+              {{ else if eq . "Vulnerability_assessment" }}
                 {{ $label = "Vulnerability measurement" }}
               {{ end }}
               <tr>
