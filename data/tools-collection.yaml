@@ -1,0 +1,366 @@
+---
+tools:
+- title: CycloneDX Generator (cdxgen)
+  date: '2025-10-28T13:48:48+01:00'
+  draft: false
+  manufacturer: OWASP
+  link: https://github.com/CycloneDX/cdxgen
+  release_date: June 2017 – February 2025 (v11.1.9)
+  tool_maker: OWASP
+  description: A CLI tool to generate BOMs with all project dependencies, accompanied by various functionalities.
+  security_goals:
+    Authenticity: Can create and verify signatures for SBOMs
+    Integrity: Can create and verify signatures for SBOMs
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: "✅"
+    Signing: "✅"
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: "✅"
+    Quality_assessment_validation: "✅"
+    Conversion: "✅"
+    Management: "☑️"
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: Chainloop
+  date: '2025-10-28T14:12:39+01:00'
+  draft: false
+  manufacturer: Chainloop
+  link: https://github.com/chainloop-dev/chainloop
+  release_date: March 2023 – February 2025 (v0.171.0)
+  tool_maker: Contributors include Google, OpenSSF, OWASP
+  description: Repository for storing various types of artifacts. Because it supports signatures and attestations, it contributes to many security goals. Chainloop’s storage can be implemented using a Content Addressable Storage API, making data tamper-proof. It also offers integration with Dependency-Track and Guac.
+  security_goals:
+    Authenticity: Can verify signatures for SBOMs
+    Integrity: Can verify signatures for SBOMs
+    Non-repudiation: Can verify attestations for SBOMs
+    Confidentiality: ''
+    Authorization: Can define roles
+    Availability: Content Addressable Storage API
+  functional_goals:
+    Creation: ''
+    Signing: "✅"
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: "✅"
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: "✅"
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: Cosign
+  date: '2025-10-28T14:12:06+01:00'
+  draft: false
+  manufacturer: Sigstore
+  link: https://github.com/sigstore/cosign
+  release_date: February 2021 – February 2025 (v2.4.3)
+  tool_maker: Sigstore
+  description: With Cosign, it is possible to create and verify signatures. It also has built-in support for in-toto attestations.
+  security_goals:
+    Authenticity: Can create and verify signatures for SBOMs
+    Integrity: Can create and verify signatures for SBOMs
+    Non-repudiation: Can create and verify attestations for SBOMs
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: ''
+    Signing: "✅"
+    Ingestion: ''
+    Sharing: ''
+    Signature_verification: "✅"
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: CycloneDX CLI
+  date: '2025-10-28T12:03:40+01:00'
+  draft: false
+  manufacturer: OWASP
+  link: https://github.com/CycloneDX/cyclonedx-cli
+  release_date: October 2022 – November 2024 (v0.27.2)
+  tool_maker: OWASP
+  description: A CLI tool to perform various operations on SBOMs. Compared to `sbom-utility`, it can create and verify signatures, but it does not have the capabilities to query SBOMs for vulnerabilities or components.
+  security_goals:
+    Authenticity: Can create and verify signatures for SBOMs
+    Integrity: Can create and verify signatures for SBOMs
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: "✅"
+    Signing: "✅"
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: "✅"
+    Quality_assessment_validation: "✅"
+    Conversion: "✅"
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: Grype
+  date: '2025-10-28T14:09:02+01:00'
+  draft: false
+  manufacturer: Anchore
+  link: https://github.com/anchore/grype
+  release_date: May 2020 – January 2025 (v0.87.0)
+  tool_maker: Anchore
+  description: Grype scans an environment for vulnerabilities based on input SBOMs.
+  security_goals:
+    Authenticity: Can verify signatures for SBOMs
+    Integrity: Can verify signatures for SBOMs
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: ''
+    Signing: ''
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: "✅"
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: "✅"
+- title: GUAC
+  date: '2025-10-28T13:48:55+01:00'
+  draft: false
+  manufacturer: Google, OpenSSF, OWSAP
+  link: https://github.com/guacsec/guac
+  release_date: June 2022 – January 2025 (v0.13.2)
+  tool_maker: Contributors include Google, OpenSSF, OWASP
+  description: GUAC (Graph for Understanding Artifact Composition) is a tool designed to collect and analyze software artifacts. It builds a graph that clarifies the relationships between artifacts, making dependencies in the supply chain more transparent.
+  security_goals:
+    Authenticity: ''
+    Integrity: ''
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: ''
+    Signing: ''
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: ''
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: "☑️"
+    Enrichment: ''
+    Vulnerability_Measurement: "☑️"
+- title: SBOM Assembler
+  date: '2025-10-28T14:02:13+01:00'
+  draft: false
+  manufacturer: Interlynk
+  link: https://github.com/interlynk-io/sbomasm
+  release_date: May 2023 – February 2025 (v1.0.0)
+  tool_maker: Interlynk
+  description: One of Interlynk’s tools for working with SBOMs. SBOMs can be edited, searched, and merged.
+  security_goals:
+    Authenticity: ''
+    Integrity: ''
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: "☑️"
+    Signing: ''
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: ''
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: "✅"
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: SBOM Explorer
+  date: '2025-10-28T14:02:23+01:00'
+  draft: false
+  manufacturer: Interlynk
+  link: https://github.com/interlynk-io/sbomex
+  release_date: March 2023 – August 2024 (v1.0.0)
+  tool_maker: Interlynk
+  description: Search Interlynk’s public database using this tool.
+  security_goals:
+    Authenticity: ''
+    Integrity: ''
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: "☑️"
+    Signing: ''
+    Ingestion: "☑️"
+    Sharing: ''
+    Signature_verification: ''
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: SBOM Grep
+  date: '2025-10-28T14:02:20+01:00'
+  draft: false
+  manufacturer: Interlynk
+  link: https://github.com/interlynk-io/sbomgr
+  release_date: February 2023 – February 2025 (v1.0.0)
+  tool_maker: Interlynk
+  description: SBOM Grep enables searching SBOMs based on various criteria.
+  security_goals:
+    Authenticity: ''
+    Integrity: ''
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: ''
+    Signing: ''
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: ''
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: SBOM Quality Score
+  date: '2025-10-28T14:02:17+01:00'
+  draft: false
+  manufacturer: Interlynk
+  link: https://github.com/interlynk-io/sbomqs
+  release_date: January 2023 – February 2025 (v1.0.2)
+  tool_maker: Interlynk
+  description: SBOM Quality Score compares SBOMs against their declared format and assigns a score based on that. This score can then be published publicly.
+  security_goals:
+    Authenticity: ''
+    Integrity: ''
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: ''
+    Signing: ''
+    Ingestion: "✅"
+    Sharing: "☑️"
+    Signature_verification: ''
+    Quality_assessment_validation: "✅"
+    Conversion: ''
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: SPDX Tools (java/python)
+  date: '2025-10-28T13:48:51+01:00'
+  draft: false
+  manufacturer: SPDX
+  link: https://github.com/spdx/tools-python
+  release_date: January 2012 – September 2024 (v0.8.3) & January 2020 – February 2025 (RC2 2.0.0)
+  tool_maker: SPDX
+  description: The two SPDX libraries for Java and Python offer the most functionalities, including the creation and validation of SPDX SBOMs. It is important to note that they do **not** support conversion between CycloneDX and SPDX.
+  security_goals:
+    Authenticity: ''
+    Integrity: ''
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: "✅"
+    Signing: ''
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: ''
+    Quality_assessment_validation: "✅"
+    Conversion: "☑️"
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: Syft
+  date: '2025-10-28T14:09:00+01:00'
+  draft: false
+  manufacturer: Anchore
+  link: https://github.com/anchore/syft
+  release_date: May 2020 – January 2025 (v1.19.0)
+  tool_maker: Anchore
+  description: A CLI tool for generating SBOMs for containers and other systems.
+  security_goals:
+    Authenticity: Can create and verify signatures for SBOMs
+    Integrity: Can create and verify signatures for SBOMs
+    Non-repudiation: Can create and verify attestations for SBOMs
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: "✅"
+    Signing: "✅"
+    Ingestion: "✅"
+    Sharing: ''
+    Signature_verification: "✅"
+    Quality_assessment_validation: ''
+    Conversion: "✅"
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: "☑️ (with grype)"
+- title: Transparency Exchange API
+  date: '2025-10-28T13:48:45+01:00'
+  draft: false
+  manufacturer: CycloneDX – Ecma TC 54
+  link: https://github.com/CycloneDX/transparency-exchange-api/tree/main
+  release_date: June 2021 – February 2025 ( - )
+  tool_maker: CycloneDX – Ecma TC 54
+  description: 'This API aims to enable the exchange of BOMs and other artifacts. The Ecma Technical Committee 54 is chartered to standardize this for OWASP CycloneDX: the BOM specification, standards, and algorithms.'
+  security_goals:
+    Authenticity: ''
+    Integrity: ''
+    Non-repudiation: ''
+    Confidentiality: ''
+    Authorization: API includes authorization functionality
+    Availability: ''
+  functional_goals:
+    Creation: ''
+    Signing: ''
+    Ingestion: "✅"
+    Sharing: "✅"
+    Signature_verification: ''
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''
+- title: Witness
+  date: '2025-10-28T14:12:08+01:00'
+  draft: false
+  manufacturer: In-Toto
+  link: https://github.com/in-toto/witness
+  release_date: October 2021 – February 2025 (v0.8.0)
+  tool_maker: In-Toto
+  description: Witness uses in-toto attestations and supports signing and verifying signatures.
+  security_goals:
+    Authenticity: Can create and verify signatures for SBOMs
+    Integrity: Can create and verify signatures for SBOMs
+    Non-repudiation: Can create and verify attestations for SBOMs
+    Confidentiality: ''
+    Authorization: ''
+    Availability: ''
+  functional_goals:
+    Creation: ''
+    Signing: "✅"
+    Ingestion: ''
+    Sharing: ''
+    Signature_verification: "✅"
+    Quality_assessment_validation: ''
+    Conversion: ''
+    Management: ''
+    Enrichment: ''
+    Vulnerability_Measurement: ''

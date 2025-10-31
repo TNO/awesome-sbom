@@ -1,0 +1,30 @@
+{{/* layouts/partials/tools-detail.html
+     Builds the full tool detail section with a card per tool. */}}
+{{ $collection := index .Site.Data "tools-collection" }}
+{{ if $collection }}
+  {{ $tools := $collection.tools }}
+  {{ $toolPages := where .Site.RegularPages "Section" "tools" }}
+  {{ $pageLookup := newScratch }}
+  {{ range $toolPages }}
+    {{ $pageLookup.Set .Title . }}
+  {{ end }}
+
+  {{ $toolItems := slice }}
+  {{ range $tools }}
+    {{ $title := .title | default "Untitled tool" }}
+    {{ $anchor := printf "tool-%s" (anchorize $title) }}
+    {{ $page := $pageLookup.Get $title }}
+    {{ $toolItems = $toolItems | append (dict "tool" . "page" $page "anchor" $anchor "title" $title) }}
+  {{ end }}
+  {{ $sortedTools := sort $toolItems "title" }}
+
+  {{ if gt (len $sortedTools) 0 }}
+<div class="tools-detail-section">
+  <div class="tools-detail-grid">
+    {{ range $sortedTools }}
+      {{ partial "tools-detail-card.html" . }}
+    {{ end }}
+  </div>
+</div>
+  {{ end }}
+{{ end }}

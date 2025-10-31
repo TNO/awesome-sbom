@@ -1,45 +1,12 @@
 {{ define "main" }}
 <div class="container">
-  <div class="author-profile-section">
-    <div class="profile-photo-container">
-      <img
-        src="{{ .Site.Params.Author.image | absURL }}"
-        alt="{{ .Site.Params.Author.name }}"
-        class="profile-photo"
-      />
-    </div>
-    <p class="profile-tagline">{{ .Site.Params.tagline | markdownify }}</p>
 
-    {{ with .Site.Params.welcome_file }}
-      {{ $raw := readFile . }}
-      {{ if $raw }}
-        <div class="welcome-box">
-          {{ $raw | markdownify }}
-        </div>
-      {{ end }}
-    {{ end }}
-
-  </div>
-
-   {{ if .IsHome }}
-  {{ partial "tools-table.html" . }}
-  {{ end }}
-
-  <div class="filter-section">
-    <div class="filter-tags">
-      <div class="tag active">All</div>
-      {{ range .Site.Taxonomies.tags.ByCount }}
-      <div class="tag" data-tag="{{ .Name | urlize }}">{{ .Name }}</div>
-      {{ end }}
-    </div>
-  </div>
-
-<div class="posts-list" id="posts-container">
-  {{ $posts := where .Site.RegularPages "Section" "eq" "posts" }}
-  {{ range sort $posts "Date" "asc" }}
-    {{ partial "post-list-item.html" . }}
-  {{ end }}
-</div>
+  {{ partial "matrix-table.html" . }}
+  {{ partial "tools-detail.html" . }}
 
 </div>
+
+<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
+  ↑ Back to table
+</button>
 {{ end }}

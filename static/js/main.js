@@ -1878,6 +1878,25 @@
     return postDiv;
   }
 
+  // Back to top button behaviour
+  const backToTopButton = document.getElementById("back-to-top");
+  if (backToTopButton) {
+    const toggleBackToTop = () => {
+      if (window.scrollY > 400) {
+        backToTopButton.classList.add("visible");
+      } else {
+        backToTopButton.classList.remove("visible");
+      }
+    };
+
+    toggleBackToTop();
+    window.addEventListener("scroll", toggleBackToTop);
+
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   // Console easter egg
   console.log(`
     ☕ Welcome to LofiCode! ☕

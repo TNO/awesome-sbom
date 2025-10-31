@@ -1,0 +1,58 @@
+{{ $collection := index .Site.Data "tools-collection" }}
+{{ if $collection }}
+  {{ $tools := $collection.tools }}
+  {{ $toolItems := slice }}
+  {{ range $tools }}
+    {{ $title := .title | default "Untitled tool" }}
+    {{ $anchor := printf "tool-%s" (anchorize $title) }}
+    {{ $toolItems = $toolItems | append (dict "tool" . "anchor" $anchor "title" $title) }}
+  {{ end }}
+  {{ $sortedTools := sort $toolItems "title" }}
+
+  <div class="tools-section">
+    <h2 class="tools-heading">Tools</h2>
+    <div class="tools-table-wrapper">
+      <table class="tools-table tools-matrix-table">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Creation</th>
+            <th>Signing</th>
+            <th>Ingestion</th>
+            <th>Sharing</th>
+            <th>Signature verification</th>
+            <th>Quality assessment &amp; validation</th>
+            <th>Conversion</th>
+            <th>Management</th>
+            <th>Enrichment</th>
+            <th>Vulnerability Measurement</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $sortedTools }}
+            {{ $tool := .tool }}
+            {{ $anchor := .anchor }}
+            {{ $title := .title }}
+            <tr class="tool-matrix-row"
+                onclick="window.location.hash='{{ $anchor }}';"
+                onkeydown="if(event.key==='Enter' || event.key===' '){event.preventDefault();window.location.hash='{{ $anchor }}';}"
+                role="link"
+                tabindex="0">
+              <td>{{ $title }}</td>
+              <td>{{ $tool.functional_goals.Creation }}</td>
+              <td>{{ $tool.functional_goals.Signing }}</td>
+              <td>{{ $tool.functional_goals.Ingestion }}</td>
+              <td>{{ $tool.functional_goals.Sharing }}</td>
+              <td>{{ $tool.functional_goals.Signature_verification }}</td>
+              <td>{{ $tool.functional_goals.Quality_assessment_validation }}</td>
+              <td>{{ $tool.functional_goals.Conversion }}</td>
+              <td>{{ $tool.functional_goals.Management }}</td>
+              <td>{{ $tool.functional_goals.Enrichment }}</td>
+              <td>{{ $tool.functional_goals.Vulnerability_Measurement }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{ end }}

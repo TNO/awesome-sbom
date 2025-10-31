@@ -1,0 +1,157 @@
+{{/* layouts/partials/tools-detail-card.html
+     Renders a detailed card for a single tool.
+     Expects a dict with keys:
+     - tool: the data object from data/tools/*.yaml
+     - page: optional Hugo page for linking
+     - anchor: precomputed anchor id for deep linking
+     - title: precomputed display title (optional) */}}
+{{ $tool := .tool }}
+{{ $page := .page }}
+{{ $title := .title | default $tool.title }}
+{{ if and (not $title) $page }}
+  {{ $title = $page.Title }}
+{{ else if not $title }}
+  {{ $title = "Untitled tool" }}
+{{ end }}
+{{ $anchor := .anchor }}
+{{ if not $anchor }}
+  {{ $anchor = printf "tool-%s" (anchorize $title) }}
+{{ end }}
+
+{{ $link := $tool.link }}
+{{ if and (not $link) $page }}
+  {{ $link = $page.Params.link }}
+{{ end }}
+
+{{ $manufacturer := $tool.manufacturer }}
+{{ if and (not $manufacturer) $page }}
+  {{ $manufacturer = $page.Params.manufacturer }}
+{{ end }}
+
+{{ $maker := $tool.tool_maker }}
+{{ if or (not $maker) (eq $maker "") }}
+  {{ $maker = $manufacturer }}
+{{ end }}
+
+{{ $release := $tool.release_date }}
+{{ if and (not $release) $tool.first_release_latest_release }}
+  {{ $release = $tool.first_release_latest_release }}
+{{ end }}
+
+{{ $description := $tool.description }}
+{{ if and (not $description) $page }}
+  {{ $description = $page.Summary | plainify }}
+{{ end }}
+
+{{ $securityKeys := slice "Authenticity" "Integrity" "Non-repudiation" "Confidentiality" "Authorization" "Availability" }}
+{{ $functionalKeys := slice "Creation" "Signing" "Ingestion" "Sharing" "Signature_verification" "Quality_assessment_validation" "Conversion" "Management" "Enrichment" "Vulnerability_Measurement" }}
+
+{{ $securityGoals := $tool.security_goals }}
+{{ $functionalGoals := $tool.functional_goals }}
+
+<article id="{{ $anchor }}" class="post-item tool-detail-card">
+  <div class="post-content tool-detail-body">
+    <div class="tool-detail-title-row">
+      <h3 class="post-title-vaporwave tool-detail-title">
+        {{ if and $page $page.RelPermalink }}
+          <a href="{{ $page.RelPermalink }}">{{ $title }}</a>
+        {{ else }}
+          {{ $title }}
+        {{ end }}
+      </h3>
+    </div>
+
+    {{ with $description }}
+      <p class="tool-detail-description">{{ . }}</p>
+    {{ end }}
+
+    <div class="tool-detail-info">
+      {{ if $link }}
+        <div class="tool-detail-info-item">
+          <span class="tool-detail-info-label">Link</span>
+          <a class="tool-detail-info-link" href="{{ $link }}" target="_blank" rel="noopener">{{ $link }}</a>
+        </div>
+      {{ end }}
+      {{ if $manufacturer }}
+        <div class="tool-detail-info-item">
+          <span class="tool-detail-info-label">Manufacturer</span>
+          <span class="tool-detail-info-value">{{ $manufacturer }}</span>
+        </div>
+      {{ end }}
+      {{ if and $maker (ne $maker $manufacturer) }}
+        <div class="tool-detail-info-item">
+          <span class="tool-detail-info-label">Tool maker</span>
+          <span class="tool-detail-info-value">{{ $maker }}</span>
+        </div>
+      {{ end }}
+      {{ if $release }}
+        <div class="tool-detail-info-item">
+          <span class="tool-detail-info-label">Release info</span>
+          <span class="tool-detail-info-value">{{ $release }}</span>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="tool-detail-tables">
+      <div class="tool-detail-table">
+        <h4 class="tool-detail-table-title">Functional goals</h4>
+        <table class="tool-goals-table">
+          <thead>
+            <tr>
+              <th scope="col">Goal</th>
+              <th scope="col">Contribution</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range $functionalKeys }}
+              {{ $value := "" }}
+              {{ if $functionalGoals }}
+                {{ with index $functionalGoals . }}
+                  {{ $value = . }}
+                {{ end }}
+              {{ end }}
+              {{ $label := humanize . }}
+              {{ if eq . "Quality_assessment_validation" }}
+                {{ $label = "Quality assessment & validation" }}
+              {{ else if eq . "Signature_verification" }}
+                {{ $label = "Signature verification" }}
+              {{ else if eq . "Vulnerability_Measurement" }}
+                {{ $label = "Vulnerability measurement" }}
+              {{ end }}
+              <tr>
+                <th scope="row">{{ $label }}</th>
+                <td>{{ $value }}</td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tool-detail-table">
+        <h4 class="tool-detail-table-title">Security goals</h4>
+        <table class="tool-goals-table">
+          <thead>
+            <tr>
+              <th scope="col">Goal</th>
+              <th scope="col">Contribution</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range $securityKeys }}
+              {{ $value := "" }}
+              {{ if $securityGoals }}
+                {{ with index $securityGoals . }}
+                  {{ $value = . }}
+                {{ end }}
+              {{ end }}
+              <tr>
+                <th scope="row">{{ . }}</th>
+                <td>{{ $value }}</td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
