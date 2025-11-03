@@ -487,6 +487,63 @@ nav {
     background: transparent;
 }
 
+.tools-intro {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 28px var(--shadow-color);
+}
+
+.tools-intro__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.tools-intro__title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin: 0;
+}
+
+.tools-intro__inner p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.tools-intro__inner p:last-child {
+    margin-bottom: 0;
+}
+
+.tools-intro__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.tools-intro__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.tools-intro__link:hover {
+    background: var(--accent-primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
 /* Post Layout for Wide Screens */
 .post-layout {
     display: grid;

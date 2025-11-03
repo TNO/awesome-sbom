@@ -14,7 +14,7 @@ title = 'Awsome-SBOM'
   welcome_file = "data/welcome.md"
 
 [params.author]
-    name = "TNO & NSCS"
+    name = "TNO"
     image = "images/sbom_graphic.png"
 
 
