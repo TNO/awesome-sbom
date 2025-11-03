@@ -3260,6 +3260,18 @@ figure figcaption {
   }
 }
 
+/**
+ * Introduction
+ */
+.introduction {
+  margin: 1.5rem 0 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  box-shadow: 0 12px 32px var(--shadow-color);
+}
+
 /* Tools table (above posts) */
 .tools-section {
   margin: 1.5rem 0 2rem;
@@ -3311,6 +3323,14 @@ figure figcaption {
 .tools-table tr:hover td {
   background: rgba(0, 86, 163, 0.08);
   transition: background 0.2s ease;
+}
+
+.tools-table tr.tools-table-phases th {
+  border: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
 }
 
 .tool-matrix-row {
