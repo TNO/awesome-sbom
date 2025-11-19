@@ -1,89 +1,77 @@
-+++
-date = '2025-11-03T11:46:10+02:00'
-title = "SBOM Lifecycle"
-draft = false
-+++
+# SBOM Lifecycle Phases: Functional and Security Requirements
 
-# The SBOM Lifecycle
+## Phase 1 — Produce
+This phase covers the process of generating an SBOM for a specific software artifact. This can be done manually or, preferably, as part of an integrated software development process. The SBOM should detail all components, direct and indirect dependencies, and relevant metadata. The quality and completeness of the SBOM are foundational for the rest of the lifecycle.
 
-A **Software Bill of Materials (SBOM)** is a structured inventory of all components that make up a software product. It lists libraries, dependencies, and their relationships, helping organizations understand what their software contains. The Dutch National Cyber Security Centre (NCSC-NL) describes a clear lifecycle for SBOMs in its [Software Bill of Materials Starter Guide](https://english.ncsc.nl/binaries/ncsc-en/documenten/publications/2024/july/30/software-bill-of-materials-starter-guide/Software+Bill+of+Materials+Starter+Guide.pdf).
+### Functional Goals
+| Functional Goal | Description |
+|---|---|
+| Creation | Generating an SBOM for a specific software artifact. |
 
-Understanding the SBOM lifecycle helps teams decide *when* and *how* to generate, use, and maintain these inventories across the software supply chain.
-
----
-
-## SBOM Lifecycle Phases
-
-The SBOM lifecycle distinguishes when the SBOM is created in relation to the software build process. The NCSC defines three main phases:
-
-### 1. Pre-build
-The SBOM is generated before the software is built.  
-This phase typically includes planned components, configuration files, and manifests. It gives an early overview of what is expected to go into the build but may not reflect the final artifact exactly.
-
-### 2. Build
-The SBOM is produced during the build process.  
-This captures the exact versions of dependencies that are actually used when compiling or packaging the software. A build-phase SBOM offers an accurate representation of what went into the produced artifact.
-
-### 3. Post-build
-The SBOM is generated after the software has been built and deployed.  
-It represents the software as it exists in its final form — including deployed packages, runtime dependencies, and potential environment-specific components. This phase often provides the most accurate view of the running system.
+### Security Goals
+| Security Goal | Description |
+|---|---|
+| Authenticity | Ensure that the information used to create the SBOM comes from a trusted source. |
+| Integrity | All data involved in the production process must be included in the SBOM without alteration. |
+| Non-repudiation | The origin of the SBOM can be reliably recorded, and the recipient has proof of the source's identity. |
+| Confidentiality | An attacker cannot read the SBOM; it is encrypted or only accessible to authorized parties. |
+| Authorization | An SBOM may only be edited by processes or users with the appropriate authorization. |
 
 ---
 
-## Why Lifecycle Phase Matters
+## Phase 2 — Share
+After creation, the SBOM is shared between producer and consumer (or third parties). Secure and reliable exchange is essential, whether the SBOM is made public or shared privately. The process must ensure authenticity, integrity, and confidentiality.
 
-The lifecycle phase determines how the SBOM should be interpreted.  
-A pre-build SBOM can support planning and compliance, but it may not match the deployed system.  
-A post-build SBOM, on the other hand, offers a reliable basis for vulnerability scanning and incident response.  
-Recording the lifecycle phase as metadata within the SBOM improves traceability and context, helping others understand the inventory’s reliability.
+### Functional Goals
+| Functional Goal | Description |
+|---|---|
+| Sharing | Facilitate sharing from a supplier to a consumer, or from a consumer to a third party. |
+| Ingestion | Import SBOMs from suppliers and/or third parties. |
 
----
-
-## Managing the SBOM Lifecycle
-
-Effective SBOM use depends on consistent management across its lifecycle.  
-The NCSC suggests a series of practical steps:
-
-### 1. Produce SBOMs
-Define who is responsible for generating SBOMs, when they are produced, and which tools are used.  
-Automate the generation process to ensure consistency and reduce human error.  
-Include metadata such as the lifecycle phase, author, and timestamp.
-
-### 2. Manage SBOMs
-Store SBOMs in a central repository accessible to development, security, and operations teams.  
-Update SBOMs whenever components change — for example, after upgrades or configuration updates.  
-Maintain proper version control and change history.
-
-### 3. Share SBOMs
-Agree on how SBOMs are exchanged between suppliers, customers, or internal teams.  
-Decide on the format, level of detail, and frequency of updates.  
-Ensure that the SBOMs shared externally do not expose sensitive internal information.
-
-### 4. Deploy SBOMs
-Use SBOM data actively.  
-Integrate it with vulnerability management systems to identify affected components when new vulnerabilities appear.  
-Leverage lifecycle metadata to assess how trustworthy or current a given SBOM is.
-
-### 5. Review and Improve
-Regularly evaluate SBOM quality and completeness.  
-Adjust internal processes, tools, and data formats as standards evolve.  
-Continuous improvement ensures that SBOMs remain accurate and useful over time.
+### Security Goals
+| Security Goal | Description |
+|---|---|
+| Authenticity | Verify the identity of sender and receiver, as well as the correctness of the SBOM. |
+| Integrity | An SBOM must arrive at the recipient without modification. |
+| Non-repudiation | The generation or sharing of an SBOM is recorded and cannot later be denied by the supplier. |
+| Confidentiality | Only authorized parties may view an SBOM. |
+| Authorization | Only an authorized party should be able to share and receive an SBOM. |
 
 ---
 
-## Summary Table
+## Phase 3 — Manage
+This phase involves storing and maintaining SBOMs within the organization. It includes updating SBOMs when software changes, validating quality, converting formats, and enriching SBOMs with new vulnerability or security information.
 
-| Phase      | When It Happens            | Typical Use Case                              |
-|-------------|----------------------------|-----------------------------------------------|
-| Pre-build   | Before build execution     | Planning, compliance, component manifest      |
-| Build       | During the build process   | Accurate component and version inventory      |
-| Post-build  | After deployment           | Vulnerability management, runtime validation  |
+### Functional Goals
+| Functional Goal | Description |
+|---|---|
+| Quality assessment & validation | Check structural correctness and completeness of the SBOM against SBOM standards and internal requirements. |
+| Conversion | Convert SBOM information into formats (often CycloneDX and SPDX) supported by organizational tools and processes. |
+| Management | Manage the SBOM collection: ensure availability, integrity, and confidentiality; verify validity; archive SBOMs no longer relevant. |
+| Enrichment | Enrich SBOMs with new vulnerability information and security advisories (e.g., VEX and CSAF), and add dependency/quality info from other sources. |
+
+### Security Goals
+| Security Goal | Description |
+|---|---|
+| Confidentiality | The SBOM storage within an organization must only be accessible to authorized users. |
+| Integrity | During SBOM management, it must remain accurate and complete; updates in the software product must be reflected in the SBOM; old SBOMs should be archived. |
+| Availability | SBOM storage must always be available for use. |
+| Authorization | SBOMs should only be managed by an entity with the appropriate authorization. |
 
 ---
 
-## Conclusion
+## Phase 4 — Deploy
+In this phase, the SBOM is actively used for risk management, vulnerability management, and compliance processes. The SBOM is linked to vulnerability information to assess and mitigate risks in the software supply chain.
 
-The SBOM lifecycle is not just about generating files — it’s about maintaining a reliable, consistent record of software components throughout development and deployment.  
-By aligning SBOM practices with lifecycle phases, organizations can build more transparent, traceable, and secure software supply chains.
+### Functional Goals
+| Functional Goal | Description |
+|---|---|
+| Vulnerability assessment | Use SBOM and vulnerability information for security operations and risk management. |
 
----
+### Security Goals
+| Security Goal | Description |
+|---|---|
+| Confidentiality | SBOM and vulnerability information should not be visible to unauthorized individuals. |
+| Integrity | Ensure that the deployed SBOM is correct and complete. |
+| Availability | An organization must always have access to the SBOM collection to quickly link vulnerabilities. |
+| Authorization | Only authorized individuals may make changes or add information to the systems. |

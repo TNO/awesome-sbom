@@ -16,21 +16,21 @@
         <thead>
           <tr class="tools-table-phases">
             <th colspan="1"></th>
-            <th colspan="1">Production</th>
-            <th colspan="2">Sharing</th>
-            <th colspan="4">Management</th>
-            <th colspan="1">Exploitation</th>
+            <th colspan="1">Produce</th>
+            <th colspan="2" class="phase-divider">Share</th>
+            <th colspan="4" class="phase-divider">Manage</th>
+            <th colspan="1" class="phase-divider">Deploy</th>
           </tr>
           <tr>
             <th>Tool</th>
             <th>Creation</th>
-            <th>Sharing</th>
+            <th class="phase-divider">Sharing</th>
             <th>Ingestion</th>
-            <th>Quality assessment &amp; validation</th>
+            <th class="phase-divider">Quality assessment &amp; validation</th>
             <th>Conversion</th>
             <th>Management</th>
             <th>Enrichment</th>
-            <th>Vulnerability assessment</th>
+            <th class="phase-divider">Vulnerability assessment</th>
           </tr>
         </thead>
         <tbody>
@@ -45,13 +45,13 @@
                 tabindex="0">
               <td>{{ $title }}</td>
               <td>{{ $tool.functional_goals.Creation }}</td>
-              <td>{{ $tool.functional_goals.Sharing }}</td>
+              <td class="phase-divider">{{ $tool.functional_goals.Sharing }}</td>
               <td>{{ $tool.functional_goals.Ingestion }}</td>
-              <td>{{ $tool.functional_goals.Quality_assessment_validation }}</td>
+              <td class="phase-divider">{{ $tool.functional_goals.Quality_assessment_validation }}</td>
               <td>{{ $tool.functional_goals.Conversion }}</td>
               <td>{{ $tool.functional_goals.Management }}</td>
               <td>{{ $tool.functional_goals.Enrichment }}</td>
-              <td>{{ $tool.functional_goals.Vulnerability_assessment }}</td>
+              <td class="phase-divider">{{ $tool.functional_goals.Vulnerability_assessment }}</td>
             </tr>
           {{ end }}
         </tbody>

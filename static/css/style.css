@@ -3193,6 +3193,14 @@ figure figcaption {
   color: var(--accent-primary);
 }
 
+.tools-table .phase-divider {
+  border-left: 2px solid rgba(0, 86, 163, 0.35);
+}
+
+.tools-table .phase-divider:first-child {
+  border-left: none;
+}
+
 
 /* Optional: style tags as soft pills if you wrap each tag in a span.tool-tag */
 .tool-tag {
