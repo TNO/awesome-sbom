@@ -1,4 +1,6 @@
-# SBOM Lifecycle Phases: Functional and Security Requirements
+---
+title: "SBOM Lifecycle Phases: Functional and Security Requirements"
+---
 
 ## Phase 1 — Produce
 This phase covers the process of generating an SBOM for a specific software artifact. This can be done manually or, preferably, as part of an integrated software development process. The SBOM should detail all components, direct and indirect dependencies, and relevant metadata. The quality and completeness of the SBOM are foundational for the rest of the lifecycle.

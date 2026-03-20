@@ -1,11 +1,11 @@
-{{ $intro := index $.Site.Data "tools-intro" }}
-{{ if and $intro $intro.intro }}
+{{ $toolsPage := $.Site.GetPage "/tools" }}
+{{ if and $toolsPage $toolsPage.Content }}
 <section class="tools-intro">
   <div class="tools-intro__header">
     <h1 class="tools-intro__title">{{ .Site.Title }}</h1>
   </div>
   <div class="tools-intro__inner">
-    {{ $intro.intro | markdownify }}
+    {{ $toolsPage.Content }}
   </div>
   <div class="tools-intro__actions">
     <a class="tools-intro__link" href="{{ "sbom-lifecycle/" | relURL }}">

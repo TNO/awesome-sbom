@@ -1,22 +1,28 @@
 baseURL = 'https://tno.github.io/awesome-sbom/'
 languageCode = 'en-us'
-title = 'Awsome-SBOM'
+title = 'Awesome SBOM'
 
 [outputs]
     home = ["HTML", "JSON"]
 
+[[menu.main]]
+  name   = "Tools"
+  url    = "/"
+  weight = 1
 
+[[menu.main]]
+  name   = "SBOM Lifecycle"
+  url    = "/sbom-lifecycle/"
+  weight = 2
 
 [params]
-  description = "Awsome-SBOM"
-  logo = "https://www.tno.nl/publish/pages/5604/tno-logo-1484x835_003_.jpg"
+  description = "Awesome SBOM — a one-stop overview of SBOM tooling"
+  logo = "images/logo.webp"
   tagline = "One stop shop for SBOM tooling information"
-  welcome_file = "data/welcome.md"
 
 [params.author]
     name = "TNO"
     image = "images/sbom_graphic.png"
-
 
 [caches]
   [caches.images]

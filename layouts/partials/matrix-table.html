@@ -1,13 +1,13 @@
-{{ $collection := index .Site.Data "tools-collection" }}
-{{ if $collection }}
-  {{ $tools := $collection.tools }}
-  {{ $toolItems := slice }}
-  {{ range $tools }}
-    {{ $title := .title | default "Untitled tool" }}
-    {{ $anchor := printf "tool-%s" (anchorize $title) }}
-    {{ $toolItems = $toolItems | append (dict "tool" . "anchor" $anchor "title" $title) }}
+{{/* Renders a capability cell: "full" → filled dot, "partial" → half dot, else empty */}}
+{{ define "capabilityCell" }}
+  {{ if eq . "full" }}<span class="capability full" aria-label="Full support" title="Full support"></span>
+  {{ else if eq . "partial" }}<span class="capability partial" aria-label="Partial support" title="Partial support"></span>
   {{ end }}
-  {{ $sortedTools := sort $toolItems "title" }}
+{{ end }}
+
+{{ $toolPages := where .Site.RegularPages "Section" "tools" }}
+{{ if $toolPages }}
+  {{ $sortedTools := sort $toolPages "Title" }}
 
   <div class="tools-section">
     <h2 class="tools-heading">Tools</h2>
@@ -35,27 +35,36 @@
         </thead>
         <tbody>
           {{ range $sortedTools }}
-            {{ $tool := .tool }}
-            {{ $anchor := .anchor }}
-            {{ $title := .title }}
+            {{ $anchor := printf "tool-%s" (anchorize .Title) }}
+            {{ $fg := .Params.functional_goals | default dict }}
             <tr class="tool-matrix-row"
                 onclick="window.location.hash='{{ $anchor }}';"
                 onkeydown="if(event.key==='Enter' || event.key===' '){event.preventDefault();window.location.hash='{{ $anchor }}';}"
                 role="link"
                 tabindex="0">
-              <td>{{ $title }}</td>
-              <td>{{ $tool.functional_goals.Creation }}</td>
-              <td class="phase-divider">{{ $tool.functional_goals.Sharing }}</td>
-              <td>{{ $tool.functional_goals.Ingestion }}</td>
-              <td class="phase-divider">{{ $tool.functional_goals.Quality_assessment_validation }}</td>
-              <td>{{ $tool.functional_goals.Conversion }}</td>
-              <td>{{ $tool.functional_goals.Management }}</td>
-              <td>{{ $tool.functional_goals.Enrichment }}</td>
-              <td class="phase-divider">{{ $tool.functional_goals.Vulnerability_assessment }}</td>
+              <td>{{ .Title }}</td>
+              <td>{{ template "capabilityCell" (index $fg "Creation" | default "") }}</td>
+              <td class="phase-divider">{{ template "capabilityCell" (index $fg "Sharing" | default "") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "Ingestion" | default "") }}</td>
+              <td class="phase-divider">{{ template "capabilityCell" (index $fg "Quality_assessment_validation" | default "") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "Conversion" | default "") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "Management" | default "") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "Enrichment" | default "") }}</td>
+              <td class="phase-divider">{{ template "capabilityCell" (index $fg "Vulnerability_assessment" | default "") }}</td>
             </tr>
           {{ end }}
         </tbody>
       </table>
+    </div>
+    <div class="matrix-legend">
+      <span class="matrix-legend-item">
+        <span class="capability full" aria-hidden="true"></span>
+        Full support
+      </span>
+      <span class="matrix-legend-item">
+        <span class="capability partial" aria-hidden="true"></span>
+        Partial support
+      </span>
     </div>
   </div>
 {{ end }}
