@@ -11,9 +11,6 @@ hugo server
 # Production build (matches CI)
 hugo --gc --minify --baseURL "https://tno.github.io/awesome-sbom/"
 
-# Init theme submodule if layouts look broken
-git submodule update --init --recursive
-
 # Create a new tool page from the archetype
 hugo new tools/my-tool-name.md
 ```
@@ -28,9 +25,9 @@ The site is **content-driven**: each SBOM tool is a Markdown file in `content/to
 2. `partials/matrix-table.html` — capability comparison matrix, reads all pages in `Section = "tools"`
 3. `partials/tools-detail.html` — full tool cards, iterates sorted tool pages and calls `tools-detail-card.html` per tool
 
-`layouts/` contains all custom templates. The `themes/loficode/` directory is a Git submodule — override any theme template by placing a file at the same path under `layouts/` (Hugo gives project-level layouts priority).
+`layouts/` contains all templates.
 
-`static/css/style.css` contains all custom styling (3500+ lines). `static/js/main.js` handles reading progress, TOC generation, and pagination.
+`assets/css/style.css` contains all custom styling (3500+ lines). `assets/js/main.js` handles reading progress, TOC generation, and pagination.
 
 ## Adding or Updating a Tool
 
