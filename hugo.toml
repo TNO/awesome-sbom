@@ -19,6 +19,7 @@ title = 'Awesome SBOM'
   description = "Awesome SBOM — a one-stop overview of SBOM tooling"
   logo = "images/logo.webp"
   tagline = "One stop shop for SBOM tooling information"
+  github = "https://github.com/TNO/awesome-sbom"
 
 [caches]
   [caches.images]
