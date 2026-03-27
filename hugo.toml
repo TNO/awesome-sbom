@@ -20,10 +20,6 @@ title = 'Awesome SBOM'
   logo = "images/logo.webp"
   tagline = "One stop shop for SBOM tooling information"
 
-[params.author]
-    name = "TNO"
-    image = "images/sbom_graphic.png"
-
 [caches]
   [caches.images]
     dir = ':cacheDir/images'

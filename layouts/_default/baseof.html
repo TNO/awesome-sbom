@@ -18,7 +18,8 @@
     {{ partial "ambient-bar.html" . }}
     {{ end }}
 
-    <script src="{{ "js/main.js" | absLangURL }}"></script>
+    {{ $js := resources.Get "js/main.js" | fingerprint }}
+    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 
 </body>
 </html>

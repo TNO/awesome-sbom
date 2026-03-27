@@ -38,7 +38,8 @@
 />
 
 <!-- Styles -->
-<link rel="stylesheet" href="{{ "css/style.css" | absLangURL }}">
+{{ $css := resources.Get "css/style.css" | fingerprint }}
+<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
 
 <!-- RSS -->
 {{ range .AlternativeOutputFormats -}}

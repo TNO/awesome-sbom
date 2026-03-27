@@ -1,7 +1,7 @@
 <header class="site-header">
     <nav>
         <div class="nav-left">
-            <a href="{{ "/" | relLangURL }}" class="nav-home">
+            <a href="{{ .Site.Home.Permalink }}" class="nav-home">
                 <img src="{{ .Site.Params.logo | absURL }}" alt="TNO logo" class="site-logo logo-light" width="110" height="32">
                 <img src="{{ "images/logo-dark.webp" | absURL }}" alt="TNO logo" class="site-logo logo-dark" width="110" height="32">
                 <span class="site-name">{{ .Site.Title }}</span>
