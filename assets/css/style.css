@@ -677,6 +677,16 @@ table, thead, tbody, tr, th, td { contain: initial; }
   border: 1px solid var(--border);
 }
 
+.capability-description {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 /* ==========================================================================
    READING PROGRESS BAR
    ========================================================================== */

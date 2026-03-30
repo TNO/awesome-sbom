@@ -7,20 +7,29 @@
 {{ $fg := .Params.functional_goals | default dict }}
 {{ $sg := .Params.security_goals | default dict }}
 
-{{ $functionalKeys := slice "Creation" "Signing" "Ingestion" "Sharing" "Signature_verification" "Quality_assessment_validation" "Conversion" "Management" "Enrichment" "Vulnerability_assessment" }}
-{{ $securityKeys   := slice "Authenticity" "Integrity" "Non-repudiation" "Confidentiality" "Authorization" "Availability" }}
+{{ $functionalKeys := slice "creation" "signing" "ingestion" "sharing" "signature_verification" "quality_assessment_validation" "conversion" "management" "enrichment" "vulnerability_assessment" }}
+{{ $securityKeys   := slice "authenticity" "integrity" "non_repudiation" "confidentiality" "authorization" "availability" }}
 
 {{ $functionalLabels := dict
-  "Creation"                    "Creation"
-  "Signing"                     "Signing"
-  "Ingestion"                   "Ingestion"
-  "Sharing"                     "Sharing"
-  "Signature_verification"      "Signature verification"
-  "Quality_assessment_validation" "Quality assessment & validation"
-  "Conversion"                  "Conversion"
-  "Management"                  "Management"
-  "Enrichment"                  "Enrichment"
-  "Vulnerability_assessment"    "Vulnerability assessment"
+  "creation"                      "Creation"
+  "signing"                       "Signing"
+  "ingestion"                     "Ingestion"
+  "sharing"                       "Sharing"
+  "signature_verification"        "Signature verification"
+  "quality_assessment_validation" "Quality assessment & validation"
+  "conversion"                    "Conversion"
+  "management"                    "Management"
+  "enrichment"                    "Enrichment"
+  "vulnerability_assessment"      "Vulnerability assessment"
+}}
+
+{{ $securityLabels := dict
+  "authenticity"    "Authenticity"
+  "integrity"       "Integrity"
+  "non_repudiation" "Non-repudiation"
+  "confidentiality" "Confidentiality"
+  "authorization"   "Authorization"
+  "availability"    "Availability"
 }}
 
 <article id="{{ $anchor }}" class="tool-detail-card">
@@ -71,15 +80,20 @@
           </thead>
           <tbody>
             {{ range $functionalKeys }}
-              {{ $value := index $fg . | default "" }}
-              {{ if $value }}
+              {{ $entry := index $fg . }}
+              {{ $level := "" }}
+              {{ if $entry }}
+                {{ if reflect.IsMap $entry }}{{ $level = $entry.level | default "" }}{{ else }}{{ $level = $entry }}{{ end }}
+              {{ end }}
+              {{ if $level }}
                 {{ $label := index $functionalLabels . | default (humanize .) }}
                 <tr>
                   <th scope="row">{{ $label }}</th>
                   <td>
-                    {{ if eq $value "full" }}<span class="capability full">Full support</span>
-                    {{ else if eq $value "partial" }}<span class="capability partial">Partial support</span>
-                    {{ else }}{{ $value }}{{ end }}
+                    {{ if eq $level "full" }}<span class="capability full">Full support</span>
+                    {{ else if eq $level "partial" }}<span class="capability partial">Partial support</span>
+                    {{ end }}
+                    {{ if reflect.IsMap $entry }}{{ with $entry.description }}<span class="capability-description">{{ . }}</span>{{ end }}{{ end }}
                   </td>
                 </tr>
               {{ end }}
@@ -106,8 +120,9 @@
             {{ range $securityKeys }}
               {{ $value := index $sg . | default "" }}
               {{ if $value }}
+                {{ $label := index $securityLabels . | default (humanize .) }}
                 <tr>
-                  <th scope="row">{{ . }}</th>
+                  <th scope="row">{{ $label }}</th>
                   <td>{{ $value }}</td>
                 </tr>
               {{ end }}

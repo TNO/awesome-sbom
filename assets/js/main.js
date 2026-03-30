@@ -67,7 +67,12 @@
       }, { passive: true });
 
       backToTop.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const table = document.getElementById('tools-table');
+        if (table) {
+          table.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       });
     }
   });
