@@ -7,3 +7,5 @@ This webpage provides an (hopefully) up-to-date overview of tools and software f
 The tools listed here cover the full SBOM lifecycle, from production and sharing to management and deployment, addressing key functional needs such as SBOM creation, validation, conversion, and vulnerability assessment. In addition, the overview highlights how these tools help meet important security goals, including authenticity, integrity, confidentiality, and availability.
 
 Whether you are looking for open-source solutions or want to understand the current landscape of SBOM tooling, this site offers a practical starting point to select the right tools for your organization's needs.
+
+We are looking forward to contributions.
