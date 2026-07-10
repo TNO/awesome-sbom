@@ -5,8 +5,8 @@ draft: false
 developer: "In-Toto"
 link: "https://github.com/in-toto/witness"
 first_release: "2021-10-01"
-latest_release: "2026-01-13"
-latest_version: "v0.10.2"
+latest_release: "2026-04-14"
+latest_version: "v0.11.0"
 functional_goals:
   signing:
     level: "full"

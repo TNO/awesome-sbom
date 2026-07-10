@@ -5,8 +5,8 @@ draft: false
 developer: "OWASP"
 link: "https://github.com/CycloneDX/cdxgen"
 first_release: "2017-06-01"
-latest_release: "2026-03-25"
-latest_version: "v12.1.3"
+latest_release: "2026-07-08"
+latest_version: "v12.7.1"
 functional_goals:
   creation:
     level: "full"

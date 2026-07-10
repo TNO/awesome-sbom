@@ -5,8 +5,8 @@ draft: false
 developer: "Anchore"
 link: "https://github.com/anchore/grype"
 first_release: "2020-05-01"
-latest_release: "2026-03-19"
-latest_version: "v0.110.0"
+latest_release: "2026-06-26"
+latest_version: "v0.115.0"
 functional_goals:
   ingestion:
     level: "full"
