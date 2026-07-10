@@ -1,0 +1,61 @@
+publiccodeYmlVersion: "0.5"
+
+name: Awesome SBOM
+url: "https://github.com/TNO/awesome-sbom"
+platforms:
+  - web
+
+categories:
+  - it-security
+  - it-asset-management
+  - it-development
+
+developmentStatus: development
+
+softwareType: "standalone/web"
+
+description:
+  en:
+    shortDescription: >
+      A structured catalog of SBOM tools covering their functional and security goals.
+
+    longDescription: >
+      Awesome SBOM is an open catalog of Software Bill of Materials (SBOM) tooling,
+      published as a static website by TNO. It maps each tool against a common set of
+      **functional goals** (creation, ingestion, signing, sharing, signature verification,
+      quality assessment, conversion, management, enrichment, and vulnerability assessment)
+      and **security goals** (authenticity, integrity, non-repudiation, confidentiality,
+      authorization, and availability).
+
+      The site renders the data as an interactive comparison matrix and detailed per-tool
+      cards, making it easy for organisations to evaluate and select tools that fit their
+      SBOM lifecycle needs. All content is stored as structured Markdown with TOML
+      frontmatter and contributions are welcome via pull request.
+
+    documentation: "https://tno.github.io/awesome-sbom/"
+
+    features:
+      - Side-by-side capability matrix across all catalogued SBOM tools
+      - Detailed per-tool cards with functional and security goal ratings
+      - Coverage of the full SBOM lifecycle from creation to vulnerability assessment
+      - Machine-readable JSON endpoints alongside the human-readable website
+      - Open content — anyone can add or update a tool via a pull request
+
+legal:
+  license: Apache-2.0
+
+maintenance:
+  type: internal
+
+  contacts:
+    - name: Hidde-Jan Jongsma
+      email: hidde-jan.jongsma@tno.nl
+      affiliation: TNO
+    - name: Bart Hofman
+      email: bart.hofman@tno.nl
+      affiliation: TNO
+
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - en
