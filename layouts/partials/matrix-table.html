@@ -1,7 +1,9 @@
-{{/* Renders a capability cell: "full" → filled dot, "partial" → half dot, else empty */}}
+{{/* Renders a capability cell from a goal entry object {level, description} or a bare string */}}
 {{ define "capabilityCell" }}
-  {{ if eq . "full" }}<span class="capability full" aria-label="Full support" title="Full support"></span>
-  {{ else if eq . "partial" }}<span class="capability partial" aria-label="Partial support" title="Partial support"></span>
+  {{ $level := . }}
+  {{ if reflect.IsMap . }}{{ $level = .level | default "" }}{{ end }}
+  {{ if eq $level "full" }}<span class="capability full" aria-label="Full support" title="Full support"></span>
+  {{ else if eq $level "partial" }}<span class="capability partial" aria-label="Partial support" title="Partial support"></span>
   {{ end }}
 {{ end }}
 
@@ -9,7 +11,7 @@
 {{ if $toolPages }}
   {{ $sortedTools := sort $toolPages "Title" }}
 
-  <div class="tools-section">
+  <div class="tools-section" id="tools-table">
     <h2 class="tools-heading">Tools</h2>
     <div class="tools-table-wrapper">
       <table class="tools-table tools-matrix-table">
@@ -43,14 +45,14 @@
                 role="link"
                 tabindex="0">
               <td>{{ .Title }}</td>
-              <td>{{ template "capabilityCell" (index $fg "Creation" | default "") }}</td>
-              <td class="phase-divider">{{ template "capabilityCell" (index $fg "Sharing" | default "") }}</td>
-              <td>{{ template "capabilityCell" (index $fg "Ingestion" | default "") }}</td>
-              <td class="phase-divider">{{ template "capabilityCell" (index $fg "Quality_assessment_validation" | default "") }}</td>
-              <td>{{ template "capabilityCell" (index $fg "Conversion" | default "") }}</td>
-              <td>{{ template "capabilityCell" (index $fg "Management" | default "") }}</td>
-              <td>{{ template "capabilityCell" (index $fg "Enrichment" | default "") }}</td>
-              <td class="phase-divider">{{ template "capabilityCell" (index $fg "Vulnerability_assessment" | default "") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "creation") }}</td>
+              <td class="phase-divider">{{ template "capabilityCell" (index $fg "sharing") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "ingestion") }}</td>
+              <td class="phase-divider">{{ template "capabilityCell" (index $fg "quality_assessment_validation") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "conversion") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "management") }}</td>
+              <td>{{ template "capabilityCell" (index $fg "enrichment") }}</td>
+              <td class="phase-divider">{{ template "capabilityCell" (index $fg "vulnerability_assessment") }}</td>
             </tr>
           {{ end }}
         </tbody>
