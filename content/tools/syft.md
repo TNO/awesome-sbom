@@ -5,8 +5,8 @@ draft: false
 developer: "Anchore"
 link: "https://github.com/anchore/syft"
 first_release: "2020-05-01"
-latest_release: "2026-03-19"
-latest_version: "v1.42.3"
+latest_release: "2026-06-26"
+latest_version: "v1.46.0"
 functional_goals:
   creation:
     level: "full"
