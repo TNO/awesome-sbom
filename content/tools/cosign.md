@@ -5,8 +5,8 @@ draft: false
 developer: "Sigstore"
 link: "https://github.com/sigstore/cosign"
 first_release: "2021-02-01"
-latest_release: "2026-06-09"
-latest_version: "v3.1.1"
+latest_release: "2026-08-06"
+latest_version: "v3.1.3"
 functional_goals:
   signing:
     level: "full"

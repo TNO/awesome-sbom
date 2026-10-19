@@ -5,8 +5,8 @@ draft: false
 developer: "Interlynk"
 link: "https://github.com/interlynk-io/sbomasm"
 first_release: "2023-05-01"
-latest_release: "2026-07-10"
-latest_version: "v2.0.9"
+latest_release: "2026-09-11"
+latest_version: "v2.1.1"
 functional_goals:
   creation:
     level: "partial"

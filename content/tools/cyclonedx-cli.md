@@ -5,8 +5,8 @@ draft: false
 developer: "OWASP"
 link: "https://github.com/CycloneDX/cyclonedx-cli"
 first_release: "2022-10-01"
-latest_release: "2026-05-14"
-latest_version: "v0.32.0"
+latest_release: "2026-07-23"
+latest_version: "v0.33.1"
 functional_goals:
   creation:
     level: "full"

@@ -5,8 +5,8 @@ draft: false
 developer: "Interlynk"
 link: "https://github.com/interlynk-io/sbomgr"
 first_release: "2023-02-01"
-latest_release: "2025-07-29"
-latest_version: "v1.0.1"
+latest_release: "2026-09-11"
+latest_version: "v1.0.2"
 functional_goals:
   ingestion:
     level: "full"

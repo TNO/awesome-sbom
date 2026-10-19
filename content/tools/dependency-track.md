@@ -5,8 +5,8 @@ draft: false
 developer: "OWASP"
 link: "https://github.com/DependencyTrack/dependency-track"
 first_release: "2018-03-27"
-latest_release: "2026-06-18"
-latest_version: "5.0.2"
+latest_release: "2026-10-08"
+latest_version: "5.2.0"
 functional_goals:
   creation:
     level: "partial"

@@ -5,8 +5,8 @@ draft: false
 developer: "Interlynk"
 link: "https://github.com/interlynk-io/sbomqs"
 first_release: "2023-01-01"
-latest_release: "2026-07-10"
-latest_version: "v2.0.11"
+latest_release: "2026-10-14"
+latest_version: "v2.1.3"
 functional_goals:
   ingestion:
     level: "full"

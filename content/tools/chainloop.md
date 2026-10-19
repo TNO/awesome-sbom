@@ -5,8 +5,8 @@ draft: false
 developer: "Chainloop (contributors include Google, OpenSSF, OWASP)"
 link: "https://github.com/chainloop-dev/chainloop"
 first_release: "2023-03-01"
-latest_release: "2026-07-01"
-latest_version: "v1.103.1"
+latest_release: "2026-10-16"
+latest_version: "v1.125.0"
 functional_goals:
   signing:
     level: "full"
